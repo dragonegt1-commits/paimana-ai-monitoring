@@ -215,6 +215,14 @@ def get_job(job_id: str):
 
     return job
 
+@app.get("/api/analyze/{job_id}")
+def get_analysis(job_id: str):
+    job = jobs.get(job_id)
+
+    if job is None:
+        raise HTTPException(status_code=404, detail="Job not found.")
+
+    return job
 
 @app.get("/api/projects")
 def get_projects(month: str = "04", year: int = 2026):

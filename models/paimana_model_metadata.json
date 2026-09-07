@@ -1,0 +1,20 @@
+{
+  "feature_columns": [
+    "original_cost",
+    "revised_cost",
+    "expenditure",
+    "physical_progress",
+    "has_cost_revision",
+    "has_schedule_revision",
+    "cost_overrun_pct",
+    "expenditure_ratio",
+    "spend_progress_gap",
+    "planned_duration_days",
+    "schedule_extension_days",
+    "days_past_original_date",
+    "days_until_revised_date",
+    "days_past_revised_date"
+  ],
+  "model": "IsolationForest",
+  "version": 1
+}

@@ -828,12 +828,21 @@ def scrape_paimana(month, year):
 # ============================================================
 
 if __name__ == "__main__":
+    import sys  # Built-in tool to read terminal inputs
 
-    # Ask the user which month and year they want to scrape
-    month = input("Enter month (01-12): ").strip()
-    year = input("Enter year (e.g. 2026): ").strip()
+    # Check if the user forgot to pass month and year
+    if len(sys.argv) < 3:
+        print("\n❌ Error: Please provide month and year.")
+        print("Usage: python scraper.py <month> <year>")
+        print("Example: python scraper.py 04 2026\n")
+        sys.exit(1)
+
+    # Automatically read inputs directly from the terminal execution line
+    month = sys.argv[1].strip()
+    year = sys.argv[2].strip()
 
     df = scrape_paimana(
         month,
         year
     )
+    
